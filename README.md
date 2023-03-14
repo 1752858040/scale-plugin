@@ -1,2 +1,1 @@
-# scale-plugin
-kubernetes python api
+# k8s-python-api

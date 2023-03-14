@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: scale-plugin
+spec:
+  selector:
+    matchLabels:
+      run: scale-plugin
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: scale-plugin
+    spec:
+      containers:
+      - name: scale-plugin
+        image: docker.io/liht29/scale-plugin:latest
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            cpu: 500m
+          requests:
+            cpu: 200m
